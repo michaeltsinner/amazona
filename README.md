@@ -95,3 +95,9 @@ MERN E-Commerce Store App
 - click handler for inc/dec item
 - click handler for remove item
 - click handler for checkout
+
+16. Create Signin Screen
+
+- create sign in form
+- add email and password
+- add signin button
