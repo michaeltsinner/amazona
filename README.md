@@ -122,3 +122,9 @@ MERN E-Commerce Store App
 - create user model
 - seed sample users
 - create user routes
+
+20. Create Signin Backend API
+
+- create signin api
+- npm install jsonwebtoken
+- define generateToken
