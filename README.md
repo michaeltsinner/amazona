@@ -108,3 +108,11 @@ MERN E-Commerce Store App
 - install local mongodb database
 - npm install mongoose
 - connect to mongodb database
+
+18. Seed Sample Data
+
+- create product model
+- create user model
+- create seed route
+- use route in server.js
+- seed sample product
