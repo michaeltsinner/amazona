@@ -101,3 +101,10 @@ MERN E-Commerce Store App
 - create sign in form
 - add email and password
 - add signin button
+
+17. Connect To MongoDB Database
+
+- create atlas mongodb database
+- install local mongodb database
+- npm install mongoose
+- connect to mongodb database
