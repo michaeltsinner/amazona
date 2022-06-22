@@ -134,3 +134,9 @@ MERN E-Commerce Store App
 - handle submit action
 - save token in store and local storage
 - show user name in header
+
+22. Create Shipping Screen
+
+- create form inputs
+- handle saving shipping address
+- add checkout wizard bar
