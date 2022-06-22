@@ -140,3 +140,9 @@ MERN E-Commerce Store App
 - create form inputs
 - handle saving shipping address
 - add checkout wizard bar
+
+23. Create Sign Up Screen
+
+- create input forms
+- handle submit
+- create backend api
