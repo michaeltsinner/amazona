@@ -146,3 +146,8 @@ MERN E-Commerce Store App
 - create input forms
 - handle submit
 - create backend api
+
+24. Implement Payment Method Screen
+
+- create input forms
+- handle submit
