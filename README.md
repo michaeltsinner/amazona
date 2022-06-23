@@ -151,3 +151,9 @@ MERN E-Commerce Store App
 
 - create input forms
 - handle submit
+
+25. Create Place Order Screen
+
+- show cart items, payment and address
+- handle place order action
+- create place order api
