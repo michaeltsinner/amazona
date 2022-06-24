@@ -157,3 +157,8 @@ MERN E-Commerce Store App
 - show cart items, payment and address
 - handle place order action
 - create place order api
+
+26. Implement Place Order Action
+
+- handle place order action
+- create order create api
