@@ -1,4 +1,4 @@
-# MERN AMAZONA
+# MERN AMAZONA E-COMMERCE APP
 
 MERN E-Commerce Store App
 
