@@ -168,3 +168,15 @@ MERN E-Commerce Store App
 - create backend api for order/:id
 - fetch order api in frontend
 - show order information in 2 columns
+
+28. Implement PayPal Payment
+
+- generate paypal client id
+- create api to return client id
+- install react-paypal-js
+- use PayPalScriptProvider in index.js
+- use usePayPalScriptReducer in Order Screen
+- implement loadPayPalScript function
+- render paypal button
+- implement on Approve payment function
+- create pay order api in backend
