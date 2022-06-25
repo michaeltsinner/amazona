@@ -180,3 +180,7 @@ MERN E-Commerce Store App
 - render paypal button
 - implement on Approve payment function
 - create pay order api in backend
+
+test
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
