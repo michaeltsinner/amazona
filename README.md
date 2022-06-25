@@ -180,5 +180,3 @@ MERN E-Commerce Store App
 - render paypal button
 - implement on Approve payment function
 - create pay order api in backend
-
-test
