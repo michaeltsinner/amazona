@@ -193,3 +193,13 @@ MERN E-Commerce Store App
 - show user information
 - create user update api
 - update user info
+
+31. Publish to Heroku
+
+- create and config node project
+- serve build folder in frontend folder
+- create heroku account
+- connect it to github
+- create mongodb atlas database
+- set database connection in heroku env variables
+- commit and push
