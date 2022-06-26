@@ -180,3 +180,9 @@ MERN E-Commerce Store App
 - render paypal button
 - implement on Approve payment function
 - create pay order api in backend
+
+29. Display Order History
+
+- create order screen
+- create order history api
+- use api in the frontend
