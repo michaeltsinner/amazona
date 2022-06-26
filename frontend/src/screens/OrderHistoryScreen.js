@@ -63,12 +63,13 @@ export default function OrderHistoryScreen() {
         ) : (
             <table className="table">
                 <thead>
+                    <tr>
                     <th>ID</th>
                     <th>DATE</th>
                     <th>TOTAL</th>
                     <th>DELIVERED</th>
                     <th>ACTIONS</th>
-
+                    </tr>
                 </thead>
                 <tbody>
                 {orders.map((order) => (

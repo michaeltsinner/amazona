@@ -186,3 +186,10 @@ MERN E-Commerce Store App
 - create order screen
 - create order history api
 - use api in the frontend
+
+30. Create Profile Screen
+
+- get user info from context
+- show user information
+- create user update api
+- update user info
