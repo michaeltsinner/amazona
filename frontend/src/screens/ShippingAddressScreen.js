@@ -1,35 +1,37 @@
-import React, { useState, useContext, useEffect } from "react"
-import { Helmet } from "react-helmet-async"
-import Form from "react-bootstrap/Form"
-import Button from "react-bootstrap/Button"
-import { useNavigate } from "react-router-dom"
-import { Store } from "../Store"
-import CheckoutSteps from "../components/CheckoutSteps"
+import React, { useState, useContext, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
+import { Store } from '../Store';
+import CheckoutSteps from '../components/CheckoutSteps';
 
 export default function ShippingAddressScreen() {
-  const navigate = useNavigate()
-  const { state, dispatch: ctxDispatch } = useContext(Store)
+  const navigate = useNavigate();
+  const { state, dispatch: ctxDispatch } = useContext(Store);
   const {
     userInfo,
     cart: { shippingAddress },
-  } = state
+  } = state;
 
-  const [fullName, setFullName] = useState(shippingAddress.fullName || "")
-  const [address, setAddress] = useState(shippingAddress.address || "")
-  const [city, setCity] = useState(shippingAddress.city || "")
-  const [postalCode, setPostalCode] = useState(shippingAddress.postalCode || "")
-  const [country, setCountry] = useState(shippingAddress.country || "")
+  const [fullName, setFullName] = useState(shippingAddress.fullName || '');
+  const [address, setAddress] = useState(shippingAddress.address || '');
+  const [city, setCity] = useState(shippingAddress.city || '');
+  const [postalCode, setPostalCode] = useState(
+    shippingAddress.postalCode || ''
+  );
+  const [country, setCountry] = useState(shippingAddress.country || '');
 
   useEffect(() => {
     if (!userInfo) {
-      navigate("/signin?redirect=/shipping")
+      navigate('/signin?redirect=/shipping');
     }
-  }, [userInfo, navigate])
+  }, [userInfo, navigate]);
 
   const submitHandler = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     ctxDispatch({
-      type: "SAVE_SHIPPING_ADDRESS",
+      type: 'SAVE_SHIPPING_ADDRESS',
       payload: {
         fullName,
         address,
@@ -37,9 +39,9 @@ export default function ShippingAddressScreen() {
         postalCode,
         country,
       },
-    })
+    });
     localStorage.setItem(
-      "shippingAddress",
+      'shippingAddress',
       JSON.stringify({
         fullName,
         address,
@@ -47,9 +49,9 @@ export default function ShippingAddressScreen() {
         postalCode,
         country,
       })
-    )
-    navigate("/payment")
-  }
+    );
+    navigate('/payment');
+  };
   return (
     <div>
       <Helmet>
@@ -107,5 +109,5 @@ export default function ShippingAddressScreen() {
         </Form>
       </div>
     </div>
-  )
+  );
 }

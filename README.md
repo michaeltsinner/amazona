@@ -214,3 +214,9 @@ MERN E-Commerce Store App
 - show filters
 - create api for searching products
 - display results
+
+32. Create Admin Menu
+
+- define protected route component
+- define admin route component
+- add menu for admin in header

@@ -1,50 +1,50 @@
-import axios from "axios"
-import { Link, useLocation, useNavigate } from "react-router-dom"
-import Container from "react-bootstrap/Container"
-import Form from "react-bootstrap/Form"
-import Button from "react-bootstrap/Button"
-import { Helmet } from "react-helmet-async"
-import { useContext, useEffect, useState } from "react"
-import { Store } from "../Store"
-import { toast } from "react-toastify"
-import { getError } from "../utils"
+import axios from 'axios';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import { Helmet } from 'react-helmet-async';
+import { useContext, useEffect, useState } from 'react';
+import { Store } from '../Store';
+import { toast } from 'react-toastify';
+import { getError } from '../utils';
 
 export default function SigninScreen() {
-  const navigate = useNavigate()
-  const { search } = useLocation()
-  const redirectInUrl = new URLSearchParams(search).get("redirect")
-  const redirect = redirectInUrl ? redirectInUrl : "/"
+  const navigate = useNavigate();
+  const { search } = useLocation();
+  const redirectInUrl = new URLSearchParams(search).get('redirect');
+  const redirect = redirectInUrl ? redirectInUrl : '/';
 
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const { state, dispatch: ctxDispatch } = useContext(Store)
-  const { userInfo } = state
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { userInfo } = state;
 
   const submitHandler = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      const { data } = await axios.post("/api/users/signin", {
+      const { data } = await axios.post('/api/users/signin', {
         email,
         password,
-      })
+      });
       ctxDispatch({
-        type: "USER_SIGNIN",
+        type: 'USER_SIGNIN',
         payload: data,
-      })
-      ctxDispatch({ type: "USER_SIGNIN", payload: data })
-      localStorage.setItem("userInfo", JSON.stringify(data))
-      navigate(redirect || "/")
+      });
+      ctxDispatch({ type: 'USER_SIGNIN', payload: data });
+      localStorage.setItem('userInfo', JSON.stringify(data));
+      navigate(redirect || '/');
     } catch (err) {
-      toast.error(getError(err))
+      toast.error(getError(err));
     }
-  }
+  };
 
   useEffect(() => {
     if (userInfo) {
-      navigate(redirect)
+      navigate(redirect);
     }
-  }, [navigate, redirect, userInfo])
+  }, [navigate, redirect, userInfo]);
 
   return (
     <Container className="small-container">
@@ -73,10 +73,10 @@ export default function SigninScreen() {
           <Button type="submit">Sign In</Button>
         </div>
         <div className="mb-3">
-          New customer?{" "}
+          New customer?{' '}
           <Link to={`/signup?redirect=${redirect}`}>Create your account</Link>
         </div>
       </Form>
     </Container>
-  )
+  );
 }

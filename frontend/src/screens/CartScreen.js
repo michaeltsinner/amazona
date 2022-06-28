@@ -1,40 +1,40 @@
-import { useContext } from "react"
-import { Store } from "../Store"
-import { Helmet } from "react-helmet-async"
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
-import MessageBox from "../components/MessageBox"
-import ListGroup from "react-bootstrap/ListGroup"
-import Button from "react-bootstrap/Button"
-import Card from "react-bootstrap/Card"
-import { Link, useNavigate } from "react-router-dom"
-import axios from "axios"
+import { useContext } from 'react';
+import { Store } from '../Store';
+import { Helmet } from 'react-helmet-async';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import MessageBox from '../components/MessageBox';
+import ListGroup from 'react-bootstrap/ListGroup';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 export default function CartScreen() {
-  const navigate = useNavigate()
-  const { state, dispatch: ctxDispatch } = useContext(Store)
+  const navigate = useNavigate();
+  const { state, dispatch: ctxDispatch } = useContext(Store);
   const {
     cart: { cartItems },
-  } = state
+  } = state;
 
   const updateCartHandler = async (item, quantity) => {
-    const { data } = await axios.get(`/api/products/${item._id}`)
+    const { data } = await axios.get(`/api/products/${item._id}`);
 
     if (data.countInStock < quantity) {
-      window.alert("Sorry. Product is out of stock")
-      return
+      window.alert('Sorry. Product is out of stock');
+      return;
     }
-    ctxDispatch({ type: "CART_ADD_ITEM", payload: { ...item, quantity } })
-    navigate("/cart")
-  }
+    ctxDispatch({ type: 'CART_ADD_ITEM', payload: { ...item, quantity } });
+    navigate('/cart');
+  };
 
   const removeItemHandler = async (item) => {
-    ctxDispatch({ type: "CART_REMOVE_ITEM", payload: item })
-  }
+    ctxDispatch({ type: 'CART_REMOVE_ITEM', payload: item });
+  };
 
   const checkoutHandler = () => {
-    navigate("/signin?redirect=/shipping")
-  }
+    navigate('/signin?redirect=/shipping');
+  };
 
   return (
     <div>
@@ -58,7 +58,7 @@ export default function CartScreen() {
                         src={item.image}
                         alt={item.name}
                         className="img-fluid rounded img-thumbnail"
-                      ></img>{" "}
+                      ></img>{' '}
                       <Link to={`product/${item.slug}`}>{item.name}</Link>
                     </Col>
                     <Col md={3}>
@@ -70,8 +70,8 @@ export default function CartScreen() {
                         disabled={item.quantity === 1}
                       >
                         <i className="fas fa-minus-circle"></i>
-                      </Button>{" "}
-                      <span>{item.quantity}</span>{" "}
+                      </Button>{' '}
+                      <span>{item.quantity}</span>{' '}
                       <Button
                         variant="light"
                         onClick={() =>
@@ -103,7 +103,7 @@ export default function CartScreen() {
               <ListGroup variant="flush">
                 <ListGroup.Item>
                   <h3>
-                    Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}{" "}
+                    Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}{' '}
                     items) : $
                     {cartItems.reduce((a, c) => a + c.price * c.quantity, 0)}
                   </h3>
@@ -126,5 +126,5 @@ export default function CartScreen() {
         </Col>
       </Row>
     </div>
-  )
+  );
 }
