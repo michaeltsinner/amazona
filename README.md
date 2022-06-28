@@ -208,3 +208,9 @@ MERN E-Commerce Store App
 
 - add sidebar
 - add search box
+
+33. Create Search Screen
+
+- show filters
+- create api for searching products
+- display results
