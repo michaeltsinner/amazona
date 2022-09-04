@@ -19,6 +19,7 @@ build
 .env.test.local
 .env.production.local
 .vscode/
+amazona-mern-cred.txt
 amazona.code-workspace
 
 npm-debug.log*
