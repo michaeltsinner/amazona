@@ -1,6 +1,7 @@
 # MERN AMAZONA E-COMMERCE APP
 
-MERN E-Commerce Store App
+MERN E-Commerce Store App created to increase understanding of the React front-end framework
+Tutorial by Coding with Basir: https://www.youtube.com/watch?v=CDtPMR5y0QU&t=1625s
 
 # Objectives
 
